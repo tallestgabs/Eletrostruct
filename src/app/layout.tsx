@@ -6,7 +6,7 @@ import { Geist } from "next/font/google";
 export const metadata: Metadata = {
   title: "Eletrostruct - Maior Empresa de Eletrônicos da UnB ",
   description: "Os Melhores Preços do Mercado!",
-  icons: [{ rel: "icon", url: "/logo_eletrostruct.png" }],
+  icons: [{ rel: "icon", url: "/favicon.png" }],
 };
 
 const geist = Geist({
