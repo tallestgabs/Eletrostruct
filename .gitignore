@@ -46,3 +46,11 @@ yarn-error.log*
 # idea files
 .idea
 /src/generated/prisma
+
+# Banco de dados local
+dev.db
+
+# Pastas de configuração de IA locais
+.agents/
+.claude/
+.windsurf/
