@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Navbar } from "~/_components/Navbar";
 import { Footer } from "~/_components/Footer";
+import { HeroBanner } from "~/_components/HeroBanner";
 
 export default function HomePage() {
   const [typingText, setTypingText] = useState("");
@@ -32,6 +33,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-green-700 via-green-700 to-black">
       <Navbar />
+      <HeroBanner />
       <div className="flex flex-col items-center justify-center pt-32">
         <h1 className="text-center text-[150px] text-white/70">
           <span className="text-green-400">{"{"}</span>
