@@ -4,11 +4,10 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
 }
 
 model Produto {
-  id        String   @id @default(cuid())
+  id        Int      @id @default(autoincrement())
   nome      String
   descricao String?
   preco     Float
