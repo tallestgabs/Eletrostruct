@@ -1,21 +1,24 @@
-"use client";
-
-import Link from "next/link";
 import { Navbar } from "~/_components/Navbar";
 import { Footer } from "~/_components/Footer";
+import { prisma } from "~/lib/prisma";
 
-export default function CatalogoPage() {
+export default async function CatalogoPage() {
+  const produtos = await prisma.produto.findMany();
+
   return (
     <main className="from-green via-blue- min-h-screen bg-gradient-to-b to-black">
       <Navbar />
       <div className="flex flex-col items-center justify-center pt-32">
-        <h1 className="text-center text-[150px] text-white/70">
-          <span className="text-green-400">{"{"}</span>
-          Catalogo Page
-          <span className="text-green-400">{"}"}</span>
-        </h1>
+      <div className="flex items-start justify-between gap-4">
+        {produtos.map((produto) => (
+          <div key={produto.id}>
+            <h2>{produto.nome}</h2>
+            <p>{produto.descricao}</p>
+            <p>R$ {produto.preco.toFixed(2)}</p>
+          </div>
+        ))}
+        </div>
       </div>
-
       <Footer />
     </main>
   );
